@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>验证码</title>
+</head>
+<body>
+<h2>验证码网页</h2>
+<input type="text" placeholder="请输入验证码">
+<img src="/verify-code" alt="" id="code">
+<a href="" id="change">看不清，换一张</a>
+<script>
+    window.onload = function () {
+        let img= document.getElementById("code");
+
+        let herf = document.getElementById("change");
+
+        img.onclick = function (){
+            //时间戳
+            const data = new Date().getTime();
+            img.src = "verify-code?" + data;
+
+        }
+        // herf.onclick = function (){
+        //     //时间戳
+        //     const data = new Date().getTime();
+        //     herf.src = "verify-code?" + data;
+        //
+        // }
+    }
+
+</script>
+</body>
+</html>

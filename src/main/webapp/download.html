@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>下载文件</title>
+</head>
+<body>
+<form action="download" method="post">
+<a href="/download?filename=bg.jpg" id="link1">壁纸</a>
+<a href="/download?filename=1.mp4" id="link2">视频</a>
+</form>
+</body>
+
+<script>
+    const link1 = document.getElementById('link1');
+    const link2 = document.getElementById('link2');
+
+    link1.addEventListener('click', confirmDownload);
+    link2.addEventListener('click', confirmDownload);
+
+    function confirmDownload(event){
+        const agree = confirm('是否下载该文件');
+
+        if (!agree){
+            event.preventDefault();
+            return false;
+        }
+    }
+</script>
+</html>
